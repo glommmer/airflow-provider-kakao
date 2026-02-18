@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.9", "3.10", "3.11"]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        # 현재 프로젝트를 설치 (의존성 포함)
+        pip install .
+
+    - name: Lint with flake8
+      run: |
+        # 문법 오류나 정의되지 않은 이름 등 강한 오류만 검사
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # 권장 사항 (줄 길이 등) 검사 - 경고만 출력하고 실패처리 안 함
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    - name: Test with pytest
+      run: |
+        pytest tests/
