@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "airflow-provider-kakao"
-version = "0.0.1"
+version = "0.0.2"
 description = "KakaoTalk provider for Apache Airflow"
 readme = "README.md"
 authors = [{name = "SeungtaekSong", email = "glommer@kakao.com"}]

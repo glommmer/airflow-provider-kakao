@@ -1,5 +1,11 @@
 # Apache Airflow Provider for KakaoTalk
 
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white)
+![Airflow](https://img.shields.io/badge/Apache%20Airflow-v3.0%2B-FF4B4B?logo=apacheairflow&logoColor=white)
+[![CI](https://github.com/glommmer/airflow-provider-kakao/actions/workflows/ci.yml/badge.svg)](https://github.com/glommmer/airflow-provider-kakao/actions/workflows/ci.yml)
+[![PyPI version](https://badge.fury.io/py/airflow-provider-kakao.svg)](https://badge.fury.io/py/airflow-provider-kakao)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/airflow-provider-kakao)](https://pypi.org/project/airflow-provider-kakao/)
+
 **Apache Airflow Provider for KakaoTalk** allows you to send messages via KakaoTalk API directly from your Airflow DAGs. It supports **"Send to Me"** (default) and **"Send to Friends"** features using the Kakao REST API.
 
 ### 🚀 Features
