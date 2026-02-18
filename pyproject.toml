@@ -8,7 +8,7 @@ version = "0.0.1"
 description = "KakaoTalk provider for Apache Airflow"
 readme = "README.md"
 authors = [{name = "SeungtaekSong", email = "glommer@kakao.com"}]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 dependencies = [
     "apache-airflow>=2.9.0",
     "requests>=2.20.0",
